@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Aarohi 💖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 100%);
+            color: #333;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ===== ANIMATED BACKGROUND ===== */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.3;
+            filter: blur(50px);
+        }
+
+        /* ===== MOTION GRAPHICS ===== */
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.3;
+            }
+            85% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        .particle {
+            animation: floatParticle linear infinite;
+        }
+
+        /* ===== HIDDEN HOTSPOTS ===== */
+        .hotspot {
+            position: absolute;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hotspot:hover::before {
+            content: '✨';
+            position: absolute;
+            font-size: 2rem;
+            animation: hotspotPulse 0.6s ease-out;
+        }
+
+        @keyframes hotspotPulse {
+            0% {
+                opacity: 1;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(2);
+            }
+        }
+
+        /* ===== SECTION STYLES ===== */
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(20px, 5vw, 60px);
+            position: relative;
+            animation: sectionFadeIn 0.8s ease-out;
+        }
+
+        @keyframes sectionFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== 1. LANDING PAGE ===== */
+        .landing {
+            background: linear-gradient(180deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 240, 245, 0.2) 100%);
+            text-align: center;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .landing-hero {
+            animation: heroIn 1s ease-out;
+        }
+
+        @keyframes heroIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .emoji-bounce {
+            font-size: clamp(3rem, 10vw, 5rem);
+            animation: bounceK 2s ease-in-out infinite;
+        }
+
+        @keyframes bounceK {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        .landing h1 {
+            font-size: clamp(2.5rem, 7vw, 4rem);
+            background: linear-gradient(135deg, #FF69B4, #FF1493, #C71585);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientMove 3s ease infinite;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .landing-name {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            color: #FF69B4;
+            letter-spacing: 3px;
+            animation: nameGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes nameGlow {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 40px rgba(255, 105, 180, 0.6);
+            }
+        }
+
+        .landing-text {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            color: #666;
+            max-width: 550px;
+            line-height: 1.9;
+            min-height: 80px;
+        }
+
+        .typing {
+            border-right: 3px solid #FF69B4;
+            padding-right: 5px;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49% { border-right-color: #FF69B4; }
+            50%, 100% { border-right-color: transparent; }
+        }
+
+        .premium-btn {
+            padding: clamp(12px, 3vw, 16px) clamp(35px, 6vw, 55px);
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            background: linear-gradient(135deg, #FF69B4, #FF1493);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .premium-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .premium-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 55px rgba(255, 105, 180, 0.5);
+        }
+
+        .premium-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* ===== 2. BIRTHDAY MESSAGE ===== */
+        .msg-section {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: clamp(30px, 6vw, 60px);
+            max-width: 800px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            animation: slideUpGlass 0.8s ease-out;
+        }
+
+        @keyframes slideUpGlass {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+                backdrop-filter: blur(0);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                backdrop-filter: blur(20px);
+            }
+        }
+
+        .msg-section h2 {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            color: #FF69B4;
+            margin-bottom: 25px;
+            animation: titlePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 25px rgba(255, 105, 180, 0.6);
+            }
+        }
+
+        .msg-section p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: #555;
+            line-height: 2;
+            margin: 18px 0;
+        }
+
+        .highlight {
+            color: #FF69B4;
+            font-weight: 700;
+        }
+
+        /* ===== 3. SHAYARI SECTION ===== */
+        .shayari-glass {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: clamp(30px, 5vw, 50px);
+            max-width: 650px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .shayari-title {
+            font-size: clamp(1.3rem, 3vw, 1.6rem);
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            }
+        }
+
+        .shayari-line {
+            font-size: clamp(0.95rem, 3vw, 1.2rem);
+            color: #555;
+            line-height: 2;
+            margin: 15px 0;
+            text-align: center;
+            font-style: italic;
+            animation: lineSlide 0.8s ease-out backwards;
+        }
+
+        .shayari-line:nth-child(2) { animation-delay: 0.1s; }
+        .shayari-line:nth-child(3) { animation-delay: 0.2s; }
+        .shayari-line:nth-child(4) { animation-delay: 0.3s; }
+        .shayari-line:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes lineSlide {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* ===== 4. GIFT OPENING SECTION ===== */
+        .gift-section {
+            background: linear-gradient(180deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 192, 203, 0.1) 100%);
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .gift-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #FF69B4;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .gift-container {
+            perspective: 1200px;
+        }
+
+        .gift-box {
+            width: clamp(150px, 30vw, 250px);
+            height: clamp(150px, 30vw, 250px);
+            margin: 0 auto;
+            position: relative;
+            cursor: pointer;
+            animation: giftFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes giftFloat {
+            0%, 100% {
+                transform: translateY(0) rotateZ(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotateZ(5deg);
+            }
+        }
+
+        .gift-box.opening {
+            animation: giftExplode 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes giftExplode {
+            0% {
+                transform: scale(1) rotateZ(0deg);
+            }
+            100% {
+                transform: scale(1.2) rotateZ(360deg);
+                opacity: 0;
+            }
+        }
+
+        .box-body {
+            width: 100%;
+            height: 85%;
+            background: linear-gradient(135deg, #FF69B4, #FF1493);
+            border-radius: 15px;
+            position: relative;
+            box-shadow: inset -10px -10px 30px rgba(0, 0, 0, 0.2), 0 20px 50px rgba(255, 105, 180, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(3rem, 8vw, 5rem);
+        }
+
+        .box-lid {
+            width: 100%;
+            height: 15%;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            letter-spacing: 1px;
+        }
+
+        .gift-box.open .box-lid {
+            transform: translateY(-200%) rotateX(90deg);
+        }
+
+        .gift-layers {
+            min-height: 200px;
+            margin-top: 30px;
+        }
+
+        .gift-layer {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 105, 180, 0.3);
+            border-radius: 15px;
+            padding: clamp(20px, 4vw, 30px);
+            margin: 20px 0;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: layerReveal 0.6s ease-out forwards;
+        }
+
+        .gift-layer:nth-child(1) { animation-delay: 0.3s; }
+        .gift-layer:nth-child(2) { animation-delay: 0.6s; }
+        .gift-layer:nth-child(3) { animation-delay: 0.9s; }
+        .gift-layer:nth-child(4) { animation-delay: 1.2s; }
+        .gift-layer:nth-child(5) { animation-delay: 1.5s; }
+
+        @keyframes layerReveal {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .gift-layer-title {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: #FF69B4;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .gift-layer-content {
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* ===== 5. CHALLENGE WHEEL SECTION ===== */
+        .wheel-section {
+            background: linear-gradient(180deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .wheel-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #FF69B4;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .wheel-container {
+            position: relative;
+            width: clamp(280px, 60vw, 400px);
+            height: clamp(280px, 60vw, 400px);
+            margin: 0 auto;
+        }
+
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(
+                from 0deg,
+                #FF69B4 0deg 72deg,
+                #FF1493 72deg 144deg,
+                #FFD700 144deg 216deg,
+                #FF6EC7 216deg 288deg,
+                #FF89B4 288deg 360deg
+            );
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+            position: relative;
+            transition: transform 0.1s linear;
+            animation: wheelSmooth 20s linear infinite;
+        }
+
+        @keyframes wheelSmooth {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .wheel.spinning {
+            animation: wheelSpin 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes wheelSpin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(3600deg);
+            }
+        }
+
+        .wheel-segment {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            color: white;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .wheel-pointer {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 30px solid #FF69B4;
+            z-index: 10;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+        }
+
+        .spin-btn {
+            padding: clamp(12px, 3vw, 16px) clamp(35px, 6vw, 55px);
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+        }
+
+        .spin-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.5);
+        }
+
+        .spin-btn:active {
+            transform: scale(0.95);
+        }
+
+        .wheel-result {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            border: 2px solid #FF69B4;
+            border-radius: 20px;
+            padding: clamp(20px, 4vw, 35px);
+            max-width: 500px;
+            text-align: center;
+            margin-top: 30px;
+            opacity: 0;
+            animation: resultPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes resultPop {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) rotateZ(-10deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotateZ(0deg);
+            }
+        }
+
+        .result-emoji {
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            margin-bottom: 15px;
+        }
+
+        .result-text {
+            font-size: clamp(1.05rem, 3vw, 1.3rem);
+            color: #555;
+            line-height: 1.9;
+            font-weight: 500;
+        }
+
+        /* ===== 6. FINAL SECTION ===== */
+        .final-section {
+            background: linear-gradient(135deg, rgba(255, 240, 245, 0.3), rgba(255, 192, 203, 0.2));
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+        }
+
+        .final-emoji {
+            font-size: clamp(4rem, 12vw, 6rem);
+            animation: finalBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes finalBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-40px);
+            }
+        }
+
+        .final-text h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #FF69B4;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .final-text p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: #666;
+            line-height: 1.9;
+            max-width: 700px;
+            margin: 0 auto 15px;
+        }
+
+        .final-tagline {
+            font-size: clamp(0.95rem, 2.3vw, 1.1rem);
+            color: #FF69B4;
+            font-weight: 700;
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        /* ===== EFFECTS ===== */
+        .confetti {
+            position: fixed;
+            pointer-events: none;
+            z-index: 99;
+        }
+
+        .heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 99;
+        }
+
+        @keyframes heartFloat {
+            to {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            section {
+                min-height: auto;
+                padding: clamp(15px, 4vw, 30px) clamp(15px, 3vw, 25px);
+                gap: 25px;
+            }
+
+            .msg-section,
+            .shayari-glass {
+                margin: 0;
+            }
+
+            .wheel-container {
+                width: 90vw;
+                height: 90vw;
+                max-width: 350px;
+                max-height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <!-- 1. LANDING SECTION -->
+    <section class="landing">
+        <div class="landing-hero">
+            <div class="emoji-bounce">😊</div>
+            <h1>Happy Birthday!</h1>
+            <div class="landing-name">Aarohi</div>
+            <div class="landing-text">
+                <span class="typing" id="typingText"></span>
+            </div>
+            <button class="premium-btn" onclick="scrollToNext()">Let's Begin ↓</button>
+        </div>
+    </section>
+
+    <!-- 2. BIRTHDAY MESSAGE -->
+    <section>
+        <div class="msg-section">
+            <h2>🎉 Happy Belated Birthday 🎉</h2>
+            <p>May your smile always stay this beautiful,<br>your dreams keep growing,<br>and your happiness never runs out.</p>
+            <p>You're one of those people who makes everything feel <span class="highlight">lighter</span>,<br>and I'm really lucky to know you <span class="highlight">💫</span></p>
+        </div>
+    </section>
+
+    <!-- 3. SHAYARI SECTION -->
+    <section>
+        <div class="shayari-glass">
+            <div class="shayari-title">✨ Ek Shayari ✨</div>
+            <div class="shayari-line">Teri muskaan se duniya banti hai khubsurat,</div>
+            <div class="shayari-line">Teri khushi se sabka mann hota miskurat.</div>
+            <div class="shayari-line">Der se hi sahi, par dost se dua hai meri,</div>
+            <div class="shayari-line">Janamdin tera ho har saal sabse khaas tera 💫</div>
+            <div class="shayari-line" style="margin-top: 30px; padding-top: 30px; border-top: 2px solid rgba(255, 105, 180, 0.2); font-weight: 500;">Tere saath har pal,<br>Ban jaata hai khayal 🌸</div>
+        </div>
+    </section>
+
+    <!-- 4. GIFT OPENING SECTION -->
+    <section class="gift-section">
+        <h2 class="gift-title">🎁 Open Your Surprise 🎁</h2>
+        <div class="gift-container">
+            <div class="gift-box" id="giftBox" onclick="openGift()">
+                <div class="box-lid">CLICK TO OPEN</div>
+                <div class="box-body">🎁</div>
+            </div>
+        </div>
+        <div class="gift-layers" id="giftLayers"></div>
+    </section>
+
+    <!-- 5. CHALLENGE WHEEL SECTION -->
+    <section class="wheel-section">
+        <h2 class="wheel-title">🎡 Spin the Magic Wheel 🎡</h2>
+        <div class="wheel-container">
+            <div class="wheel" id="wheel"></div>
+            <div class="wheel-pointer"></div>
+        </div>
+        <button class="spin-btn" onclick="spinWheel()">🎯 SPIN 🎯</button>
+        <div id="wheelResult"></div>
+    </section>
+
+    <!-- 6. FINAL SECTION -->
+    <section class="final-section">
+        <div class="final-emoji">🎂💖</div>
+        <div class="final-text">
+            <h2>Happy Birthday Aarohi</h2>
+            <p>This was just a small effort,<br>but it comes with a lot of genuine feelings.</p>
+            <p style="color: #FF69B4; font-weight: 500;">Keep smiling always 😊</p>
+            <p class="final-tagline">Some wishes are late… but the effort behind them makes them special 💖</p>
+            <button class="premium-btn" onclick="finalCelebration()" style="margin-top: 30px;">🎊 Final Celebration 🎊</button>
+        </div>
+    </section>
+
+    <script>
+        // ===== BACKGROUND PARTICLES =====
+        function createBgParticles() {
+            const bg = document.getElementById('bgAnimation');
+            const colors = ['#FFB6C1', '#FFD700', '#FF69B4', '#FFE4E1'];
+
+            for (let i = 0; i < 12; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = (Math.random() * 200 + 100) + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 18 + 20) + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                bg.appendChild(particle);
+            }
+        }
+
+        // ===== TYPING EFFECT =====
+        function typeText() {
+            const text = `I know I'm late...
+But some surprises are meant to arrive differently.
+
+So instead of just wishing you,
+I made something special for you 💖`;
+            const element = document.getElementById('typingText');
+            let index = 0;
+
+            function type() {
+                if (index < text.length) {
+                    element.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(type, 25);
+                }
+            }
+            type();
+        }
+
+        // ===== SCROLL TO NEXT =====
+        function scrollToNext() {
+            document.querySelectorAll('section')[1].scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ===== GIFT OPENING =====
+        const giftLayers = [
+            { title: '💖 Layer 1: Your Charm', content: 'You light up every room you walk into with your infectious energy and genuine kindness.' },
+            { title: '🌟 Layer 2: Your Magic', content: 'The way you make people feel valued, heard, and seen is truly magical.' },
+            { title: '✨ Layer 3: Your Dreams', content: 'May this year bring you closer to everything you\'ve been wishing for!' },
+            { title: '🎯 Layer 4: Your Strength', content: 'You\'re braver than you believe, stronger than you seem, and smarter than you think.' },
+            { title: '💫 Layer 5: Your Future', content: 'The best is yet to come. Believe in yourself as much as we believe in you!' }
+        ];
+
+        function openGift() {
+            const giftBox = document.getElementById('giftBox');
+            if (giftBox.classList.contains('open')) return;
+
+            giftBox.classList.add('open', 'opening');
+
+            setTimeout(() => {
+                const layersContainer = document.getElementById('giftLayers');
+                layersContainer.innerHTML = '';
+                giftLayers.forEach((layer, idx) => {
+                    const layerDiv = document.createElement('div');
+                    layerDiv.className = 'gift-layer';
+                    layerDiv.innerHTML = `<div class="gift-layer-title">${layer.title}</div><div class="gift-layer-content">${layer.content}</div>`;
+                    layersContainer.appendChild(layerDiv);
+                });
+
+                createConfetti();
+                launchHearts();
+            }, 600);
+        }
+
+        // ===== CHALLENGE WHEEL =====
+        const challenges = [
+            { text: '🎤 Sing Your Favorite Song', emoji: '🎤' },
+            { text: '💭 Tell Your Biggest Dream', emoji: '💭' },
+            { text: '🕺 Do a Silly Dance', emoji: '🕺' },
+            { text: '💌 Make a Wish', emoji: '💌' },
+            { text: '🌟 Say Something Positive', emoji: '🌟' }
+        ];
+
+        let isSpinning = false;
+
+        function spinWheel() {
+            if (isSpinning) return;
+            isSpinning = true;
+
+            const wheel = document.getElementById('wheel');
+            const randomDeg = Math.random() * 360 + 1800;
+
+            wheel.style.animation = 'none';
+            wheel.offsetHeight;
+            wheel.style.transition = 'transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            wheel.style.transform = `rotate(${randomDeg}deg)`;
+
+            setTimeout(() => {
+                const finalDeg = randomDeg % 360;
+                const segmentDeg = 360 / challenges.length;
+                const selectedIndex = Math.floor((360 - finalDeg) / segmentDeg) % challenges.length;
+                const challenge = challenges[selectedIndex];
+
+                const resultDiv = document.getElementById('wheelResult');
+                resultDiv.innerHTML = `
+                    <div class="result-emoji">${challenge.emoji}</div>
+                    <div class="result-text">${challenge.text}</div>
+                `;
+
+                resultDiv.style.display = 'block';
+                createConfetti();
+
+                isSpinning = false;
+            }, 3000);
+        }
+
+        // ===== CONFETTI EFFECT =====
+        function createConfetti() {
+            const colors = ['#FF69B4', '#FF1493', '#FFB6C1', '#FFD700'];
+            const emojis = ['🎉', '✨', '🎊', '💝'];
+
+            for (let i = 0; i < 40; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.top = '-20px';
+                confetti.style.fontSize = (Math.random() * 20 + 18) + 'px';
+
+                document.body.appendChild(confetti);
+
+                const duration = Math.random() * 2 + 2.5;
+                const xMove = (Math.random() - 0.5) * 300;
+
+                confetti.animate([
+                    { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
+                    { transform: `translate(${xMove}px, 100vh) rotate(720deg)`, opacity: 0 }
+                ], {
+                    duration: duration * 1000,
+                    easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                }).onfinish = () => confetti.remove();
+            }
+        }
+
+        // ===== HEARTS =====
+        function launchHearts() {
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.textContent = '❤️';
+                heart.style.left = Math.random() * window.innerWidth + 'px';
+                heart.style.top = '-20px';
+                heart.style.fontSize = (Math.random() * 18 + 18) + 'px';
+                heart.style.animation = `heartFloat ${Math.random() * 2.5 + 3}s ease-in forwards`;
+
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 5500);
+            }
+        }
+
+        // ===== FINAL CELEBRATION =====
+        function finalCelebration() {
+            createConfetti();
+            setTimeout(launchHearts, 300);
+            setTimeout(createConfetti, 600);
+        }
+
+        // ===== HIDDEN HOTSPOTS =====
+        function addHotspots() {
+            document.querySelectorAll('section').forEach(section => {
+                for (let i = 0; i < 2; i++) {
+                    const hotspot = document.createElement('div');
+                    hotspot.className = 'hotspot';
+                    hotspot.style.left = Math.random() * section.offsetWidth + 'px';
+                    hotspot.style.top = Math.random() * section.offsetHeight + 'px';
+                    hotspot.style.width = '40px';
+                    hotspot.style.height = '40px';
+                    hotspot.onclick = (e) => {
+                        e.stopPropagation();
+                        launchHearts();
+                        createConfetti();
+                    };
+                    section.appendChild(hotspot);
+                }
+            });
+        }
+
+        // ===== INIT =====
+        window.addEventListener('load', () => {
+            createBgParticles();
+            typeText();
+            addHotspots();
+        });
+
+        // ===== CURSOR TRAIL =====
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.95) {
+                const trail = document.createElement('div');
+                trail.textContent = '✨';
+                trail.style.position = 'fixed';
+                trail.style.left = e.clientX + 'px';
+                trail.style.top = e.clientY + 'px';
+                trail.style.pointerEvents = 'none';
+                trail.style.fontSize = '1.2rem';
+                trail.style.zIndex = '100';
+
+                document.body.appendChild(trail);
+
+                trail.animate([
+                    { opacity: 1, transform: 'translate(0, 0)' },
+                    { opacity: 0, transform: 'translate(0, -30px)' }
+                ], {
+                    duration: 1000,
+                    easing: 'ease-out'
+                }).onfinish = () => trail.remove();
+            }
+        });
+    </script>
+</body>
+</html>
